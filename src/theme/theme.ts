@@ -133,11 +133,11 @@ export const themeSettings = (mode: PaletteMode) => {
             },
             neutral: {
               dark: colors.grey[700],
-              main: colors.grey[500],
+              main: '#f1f1f1',
               light: colors.grey[100],
             },
             background: {
-              default: colors.primary[100],
+              default: '#1e1e1e',
             },
             text: {
               primary: '#fff',

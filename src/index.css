@@ -29,3 +29,10 @@ a {
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
+
+.searchBar {
+  border: none;
+  outline: none;
+  color: inherit;
+  width: 100%;
+}

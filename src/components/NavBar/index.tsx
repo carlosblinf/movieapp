@@ -1,7 +1,5 @@
-import Stack from '@mui/material/Stack';
-import { Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import Box from '@mui/material/Box';
 import { useTheme } from '../../theme/ThemeModeContext';
 import ToggleSwitch from '../ToggleSwitch';
 import SearchBar from '../SearchBar';
@@ -9,21 +7,21 @@ import SearchBar from '../SearchBar';
 function NavBar() {
   const { theme } = useTheme();
   return (
-    <Stack p={2} direction="row" justifyContent="space-between" alignItems="center">
-      <Box>
+    <Grid container spacing={2} direction="row" justifyContent="space-between" alignItems="center" sx={{ p: { xs: 1, md: 2 } }}>
+      <Grid item xs={12} md={3}>
         <Link to="/">
           <Typography variant="h5" component="h1" color={theme.palette.text.primary} sx={{ textTransform: 'uppercase' }}>
             MovieApp
           </Typography>
         </Link>
-      </Box>
-      <Box>
+      </Grid>
+      <Grid item xs={12} md={6}>
         <SearchBar />
-      </Box>
-      <Box>
+      </Grid>
+      <Grid item xs={12} md={3}>
         <ToggleSwitch />
-      </Box>
-    </Stack>
+      </Grid>
+    </Grid>
   );
 }
 
