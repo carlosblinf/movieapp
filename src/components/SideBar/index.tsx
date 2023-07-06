@@ -7,7 +7,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { useState } from 'react';
 
 function SideBar() {
-  const [selectedItem, setSelectedItem] = useState(1);
+  const [selectedItem, setSelectedItem] = useState<string>('now_playing');
   return (
     <List
       sx={{
@@ -19,13 +19,13 @@ function SideBar() {
       }}
       component="nav"
     >
-      <ListItemButton selected={selectedItem === 1} onClick={() => setSelectedItem(1)}>
+      <ListItemButton selected={selectedItem === 'now_playing'} onClick={() => setSelectedItem('now_playing')}>
         <ListItemIcon>
           <CameraIndoorIcon />
         </ListItemIcon>
-        <ListItemText primary="All" />
+        <ListItemText primary="Now" />
       </ListItemButton>
-      <ListItemButton selected={selectedItem === 2} onClick={() => setSelectedItem(2)}>
+      <ListItemButton selected={selectedItem === 'popular'} onClick={() => setSelectedItem('popular')}>
         <ListItemIcon>
           <StarIcon />
         </ListItemIcon>

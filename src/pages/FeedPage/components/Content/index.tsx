@@ -1,16 +1,21 @@
 import { Box, Typography } from '@mui/material';
 import Videos from '../../../../components/Videos';
-import { videoNow } from '../../../../utils/VideoData';
+import { useGetVideosQuery } from '../../../../store/services/video';
+import { useAppSelector } from '../../../../store/hooks';
+import { RootState } from '../../../../store';
+import Spinner from '../../../../components/Spinner';
 
 function Content() {
-  const { results: videos } = videoNow;
+  const { isLoading } = useGetVideosQuery('now_playing');
+
+  const { videos } = useAppSelector((state: RootState) => state.videosResult);
 
   return (
     <Box px={2}>
-      <Typography variant="h5" sx={{ ml: { md: 4 }, mb: 2 }}>
+      <Typography variant="h5" sx={{ ml: { md: 2 }, mb: 4 }}>
         Videos
       </Typography>
-      <Videos videos={videos} />
+      {isLoading ? <Spinner /> : <Videos videos={videos} />}
     </Box>
   );
 }
