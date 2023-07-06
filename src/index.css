@@ -14,7 +14,8 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -35,4 +36,10 @@ a {
   outline: none;
   color: inherit;
   width: 100%;
+}
+.MuiListItemIcon-root {
+  min-width: 30px !important;
+}
+.MuiListItemButton-root {
+  min-width: 160px !important;
 }

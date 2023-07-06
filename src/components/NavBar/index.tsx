@@ -7,10 +7,23 @@ import SearchBar from '../SearchBar';
 function NavBar() {
   const { theme } = useTheme();
   return (
-    <Grid container spacing={2} direction="row" justifyContent="space-between" alignItems="center" sx={{ p: { xs: 1, md: 2 } }}>
+    <Grid
+      container
+      spacing={2}
+      direction="row"
+      justifyContent="space-between"
+      alignItems="center"
+      sx={{ py: { xs: 1, md: 2 }, px: { xs: 2, md: 3 } }}
+    >
       <Grid item xs={12} md={3}>
         <Link to="/">
-          <Typography variant="h5" component="h1" color={theme.palette.text.primary} sx={{ textTransform: 'uppercase' }}>
+          <Typography
+            variant="h5"
+            component="h1"
+            fontWeight="bold"
+            color={theme.palette.text.primary}
+            sx={{ textTransform: 'uppercase' }}
+          >
             MovieApp
           </Typography>
         </Link>
