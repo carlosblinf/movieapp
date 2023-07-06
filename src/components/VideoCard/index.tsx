@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Video } from '../../utils/types';
 import { useTheme } from '../../theme/ThemeModeContext';
 import { transformDate } from '../../utils/parser';
+import CircularProgressbar from './components/CircularProgressbar';
 
 function VideoCard({ video }: { video: Video }) {
   const { theme } = useTheme();
@@ -16,7 +17,8 @@ function VideoCard({ video }: { video: Video }) {
           sx={{ height: 254 }}
         />
       </Link>
-      <CardContent sx={{ height: 98 }}>
+      <CardContent sx={{ height: 98, position: 'relative' }}>
+        <CircularProgressbar percentage={video.vote_average} />
         <Link to={`/videos/1${video.id}`}>
           <Typography variant="subtitle1" fontWeight="bold" color={theme.palette.primary.main}>
             {video.title.slice(0, 60)}
