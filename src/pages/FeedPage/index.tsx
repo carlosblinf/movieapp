@@ -5,10 +5,10 @@ import Content from './components/Content';
 function FeedPage() {
   return (
     <Stack sx={{ flexDirection: { xs: 'column', md: 'row' }, px: 1 }}>
-      <Box sx={{ height: { xs: 'auto', md: '92vh' } }}>
+      <Box sx={{ height: { xs: 'auto' } }}>
         <SideBar />
       </Box>
-      <Box sx={{ ml: { xs: 0, md: 2 } }}>
+      <Box sx={{ height: '85vh', width: '100%', overflowY: 'scroll' }}>
         <Content />
       </Box>
     </Stack>

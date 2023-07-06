@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { AppBar, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../theme/ThemeModeContext';
 import ToggleSwitch from '../ToggleSwitch';
@@ -18,7 +18,7 @@ function NavBar() {
       <Grid item xs={12} md={3}>
         <Link to="/">
           <Typography
-            variant="h5"
+            variant="h4"
             component="h1"
             fontWeight="bold"
             color={theme.palette.text.primary}

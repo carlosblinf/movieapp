@@ -1,5 +1,6 @@
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
+import { CssBaseline } from '@mui/material';
 import { store } from './store';
 
 import routes from './routes';
@@ -13,6 +14,7 @@ function WrappedApp() {
   return (
     <Provider store={store}>
       <ThemeContextProvider>
+        <CssBaseline />
         <App />
       </ThemeContextProvider>
     </Provider>
