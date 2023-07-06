@@ -2,9 +2,11 @@ import './style.css';
 
 type Props = {
   percentage: number;
+  // eslint-disable-next-line react/require-default-props
+  classes?: string;
 };
 
-function CircularProgressbar({ percentage = 100 }: Props) {
+function CircularProgressbar({ percentage = 100, classes }: Props) {
   const correctPercentage = percentage < 10 ? percentage * 10 : percentage;
 
   function getColor(perc: number) {
@@ -14,8 +16,8 @@ function CircularProgressbar({ percentage = 100 }: Props) {
   }
 
   return (
-    <div className="single-chart">
-      <svg viewBox="0 0 36 36" className={`circular-chart ${getColor(correctPercentage)}`}>
+    <div className={`single-chart ${classes}`}>
+      <svg viewBox="0 0 36 36" className={`circular-chart circular-chart-normal ${getColor(correctPercentage)}`}>
         <path
           className="circle-bg"
           d="M18 2.0845

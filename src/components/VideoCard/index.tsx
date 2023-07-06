@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import { Video } from '../../utils/types';
 import { useTheme } from '../../theme/ThemeModeContext';
 import { transformDate } from '../../utils/parser';
-import CircularProgressbar from './components/CircularProgressbar';
+import CircularProgressbar from '../CircularProgressbar';
 
 function VideoCard({ video }: { video: Video }) {
   const { theme } = useTheme();
 
   return (
     <Card sx={{ width: 170, mx: { md: 'auto' } }}>
-      <Link to={`/videos/1${video.id}`}>
+      <Link to={`/videos/${video.id}`}>
         <CardMedia
           title={video.title}
           image={`https://www.themoviedb.org/t/p/w220_and_h330_face${video.poster_path}`}

@@ -4,10 +4,14 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import CameraIndoorIcon from '@mui/icons-material/CameraIndoor';
 import StarIcon from '@mui/icons-material/Star';
-import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { RootState } from '../../store';
+import { setSelectedItem } from '../../store/slices/selectedOptions.slice';
 
 function SideBar() {
-  const [selectedItem, setSelectedItem] = useState<string>('now_playing');
+  const { selectedItem } = useAppSelector((state: RootState) => state.selectedOptions);
+  const dispatch = useAppDispatch();
+
   return (
     <List
       sx={{
@@ -19,13 +23,13 @@ function SideBar() {
       }}
       component="nav"
     >
-      <ListItemButton selected={selectedItem === 'now_playing'} onClick={() => setSelectedItem('now_playing')}>
+      <ListItemButton selected={selectedItem === 'top_rated'} onClick={() => dispatch(setSelectedItem('top_rated'))}>
         <ListItemIcon>
           <CameraIndoorIcon />
         </ListItemIcon>
-        <ListItemText primary="Now" />
+        <ListItemText primary="Top" />
       </ListItemButton>
-      <ListItemButton selected={selectedItem === 'popular'} onClick={() => setSelectedItem('popular')}>
+      <ListItemButton selected={selectedItem === 'popular'} onClick={() => dispatch(setSelectedItem('popular'))}>
         <ListItemIcon>
           <StarIcon />
         </ListItemIcon>

@@ -6,11 +6,13 @@ import Spinner from '../Spinner';
 
 function Layout() {
   return (
-    <Paper sx={{ width: '100%', height: '100%' }}>
+    <Paper sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
       <NavBar />
-      <Suspense fallback={<Spinner />}>
-        <Outlet />
-      </Suspense>
+      <main style={{ flex: 1 }}>
+        <Suspense fallback={<Spinner />}>
+          <Outlet />
+        </Suspense>
+      </main>
     </Paper>
   );
 }

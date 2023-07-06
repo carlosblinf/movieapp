@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import axiosBaseQuery from './axiosBaseQuery';
-import { VideoResult } from '../../utils/types';
+import { Video, VideoResult } from '../../utils/types';
 
 export const apiVideo = createApi({
   reducerPath: 'apiVideo',
@@ -12,7 +12,10 @@ export const apiVideo = createApi({
     return {
       getVideos: build.query<VideoResult, string>({
         query: (path) => ({ url: `/${path}` }),
-        providesTags: [{ type: 'videos', id: 'List' }],
+        providesTags: (path) => [{ type: 'videos', path }],
+      }),
+      getVideo: build.query<Video, string>({
+        query: (id) => ({ url: `/${id}?language=en-US'` }),
       }),
       mutation: build.mutation({
         query: () => ({ url: '/search', method: 'post' }),
@@ -21,4 +24,4 @@ export const apiVideo = createApi({
   },
 });
 
-export const { useGetVideosQuery, endpoints } = apiVideo;
+export const { useGetVideosQuery, useGetVideoQuery, endpoints } = apiVideo;

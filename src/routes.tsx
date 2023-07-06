@@ -21,7 +21,7 @@ const routes = createBrowserRouter([
         element: <FeedPage />,
       },
       {
-        path: '/video/:id',
+        path: '/videos/:id',
         element: <DetailPage />,
       },
       {
