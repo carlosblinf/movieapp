@@ -10,7 +10,7 @@ function SearchPage() {
 
   const { videos } = useAppSelector((state: RootState) => state.videosResult);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Spinner />;
 
   return (
     <Box mx={2}>

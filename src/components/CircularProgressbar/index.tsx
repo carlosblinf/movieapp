@@ -6,7 +6,7 @@ type Props = {
   classes?: string;
 };
 
-function CircularProgressbar({ percentage = 100, classes }: Props) {
+function CircularProgressbar({ percentage = 100, classes = '' }: Props) {
   const correctPercentage = percentage < 10 ? percentage * 10 : percentage;
 
   function getColor(perc: number) {
@@ -32,7 +32,7 @@ function CircularProgressbar({ percentage = 100, classes }: Props) {
           a 15.9155 15.9155 0 0 1 0 -31.831"
         />
         <text x="18" y="20.35" className="percentage">
-          {correctPercentage}%
+          {correctPercentage.toFixed()}%
         </text>
       </svg>
     </div>

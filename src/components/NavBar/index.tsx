@@ -1,4 +1,4 @@
-import { AppBar, Grid, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../theme/ThemeModeContext';
 import ToggleSwitch from '../ToggleSwitch';

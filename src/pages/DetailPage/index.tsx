@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Box, Container, Grid, Paper, Stack, Typography } from '@mui/material';
+import { Paper } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useGetVideoQuery } from '../../store/services/video';
 import Spinner from '../../components/Spinner';
